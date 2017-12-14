@@ -1,0 +1,25 @@
+{
+  "name": "transcriba-serve",
+  "version": "1.0.0",
+  "description": "A simple backend that serves static manuscript files from a directory",
+  "main": "index.php",
+  "scripts": {
+    "start": "xdg-open http://localhost:8000 && php -S localhost:8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/transcriba/transcriba-serve.git"
+  },
+  "keywords": [
+    "backend",
+    "static",
+    "transcriba"
+  ],
+  "author": "Alexander Noack <eisverticker@posteo.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/transcriba/transcriba-serve/issues"
+  },
+  "homepage": "https://github.com/transcriba/transcriba-serve#readme"
+}
