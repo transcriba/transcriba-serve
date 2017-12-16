@@ -17,7 +17,8 @@ $router->get([], function($context) {
     ],
     "manuscriptUrl" => getManuscriptUrl($context),
     "browseUrl" => getBrowseUrl($context),
-    "linkUrl" => ""
+    "logoUrl" => getLogoUrl($context),
+    "projectUrl" => ""
   );
   header('Content-Type: application/json');
   echo json_encode($api);
@@ -62,7 +63,8 @@ $router->get(['id'], function($context) {
     "imageUrl" => getBaseUrl($context).'/index.php?id='.$id.'&download=true'
     // "creationDate" => "unknown",
     // "copyright" => "unknown",
-    // "license" => "unknown"
+    // "license" => "unknown",
+    // "linkUrl" => "unknown"
   );
   header('Content-Type: application/json');
   echo json_encode($imageMetadata);
@@ -79,5 +81,13 @@ $router->get(['page', 'search'], function($context) {
     "nextPage" => 2
   );
   echo json_encode($manuscripts);
+  exit;
+});
+
+// ## Provide logo image
+$router->get(['logo'], function($context) {
+  $fileLocation = 'logo.png';
+  header('Content-Type: image/png');
+  readfile($fileLocation);
   exit;
 });
